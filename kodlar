@@ -1,0 +1,67 @@
+private void button2_Click(object sender, EventArgs e)
+{
+    double a = 0;
+    double mmk = 1.7; // Memur maaş kat sayısı
+    double deger = 0;
+
+    double t = 0;
+    // Kıdem bölümü
+    if (radioButton4.Checked)  { label16.Text = (t = mmk * 10000).ToString(); }
+    if (radioButton5.Checked)  { label16.Text = (t = mmk * 12000).ToString(); }
+    if (radioButton6.Checked)  { label16.Text = (t = mmk * 15000).ToString(); }
+    // Medeni durum
+    if(radioButton7.Checked)
+    { label17.Text = (mmk * 0).ToString(); }
+    double y = 0;
+    // Eş çalışma durumu
+    if (radioButton8.Checked)
+    { if (checkBox1.Checked)
+         { label17.Text = (y = mmk * 0).ToString();} 
+      else
+         { label17.Text = (y = mmk * 1000).ToString(); } 
+    }
+    double c = 0;
+    // Çocuk sayısı
+    double selectedIndex = comboBox1.SelectedIndex;
+    if (selectedIndex == 0) 
+    { label18.Text = (c = mmk * 0).ToString(); }
+    else if (selectedIndex == 1) 
+    { label18.Text = (c = mmk * 100).ToString(); }
+    else if (selectedIndex == 2)
+    { label18.Text = (c = mmk * 200).ToString(); }
+    else if (selectedIndex == 3)
+    { label18.Text = (c = mmk * 300).ToString();}
+
+    // Bölüm
+    if (radioButton9.Checked)
+    { label19.Text = (a = mmk * 1000).ToString();}
+    if (radioButton10.Checked)
+    { label19.Text = (a = mmk * 1200).ToString(); }
+    if (radioButton11.Checked)
+    { label19.Text = (a = mmk * 900).ToString(); }
+    double i = 0;
+    // Yabancı dil
+    if (radioButton1.Checked)
+    { label20.Text = (i = mmk * 500).ToString(); }
+    // Gelirler toplamı = toplam
+    double toplam = a + i + y + t + c;
+    label25.Text = toplam.ToString();
+    // Gider tablosu
+    double g = toplam * 0.1;
+    label21.Text = g.ToString();
+
+    double s = toplam * 0.05;
+    label22.Text = s.ToString();
+
+    double d = toplam * 0.05;
+    label23.Text = d.ToString();
+
+    double em = toplam * 0.2;
+    label24.Text = em.ToString();
+
+    double gider = em + d + s + g;
+    label26.Text = gider.ToString();
+    // Sonuç 
+    double smaas = toplam - gider;
+    label27.Text = smaas.ToString();
+
